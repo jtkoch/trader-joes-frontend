@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { axiosWithAuth } from '../../Utils/axiosWithAuth';
 
 const MainUI = () => {
   const [items, setItems] = useState([]);
   const [savedItem, setSavedItem] = useState({
-    user_id: null,
     name: "",
     price: "",
     category: "",
-    item_id: null
   });
-  console.log("Saved Items ", savedItem);
-
-  console.log("Items ", items);
+  console.log(savedItem)
 
   useEffect(() => {
-    axios
-      .get("https://trader-joes-shopping-list.herokuapp.com/api/items")
+    axiosWithAuth()
+      .get("/api/items")
 
       .then(res => {
-        console.log(res);
-        setItems(res.data);
+        console.log(items)
+        setItems(res.data)
       })
 
       .catch(err => {
@@ -29,11 +25,13 @@ const MainUI = () => {
       })
   }, [])
 
-  const userID = localStorage.getItem("userid");
+  console.log(items)
+
+  const userID = localStorage.getItem("userid")
 
   useEffect(() => {
-    axios
-      .post(`https://trader-joes-shopping-list.herokuapp.com/api/users/${userID}`, savedItem)
+    axiosWithAuth()
+      .post(`/api/users/${userID}`, savedItem)
 
       .then(res => {
         console.log(res);
@@ -45,16 +43,13 @@ const MainUI = () => {
   }, [savedItem, userID])
 
   const ClickHandler = (e) => {
-    const itemID = e.target.value;
-    console.log(itemID);
-    const theItem = items[itemID - 1];
+    const id = e.target.value;
+    const theItem = items[id - 1];
     console.log(theItem);
     setSavedItem({
-      user_id: theItem.id,
       name: theItem.name,
       price: theItem.price,
       category: theItem.category,
-      item_id: theItem.item_id
     });
   }
 
@@ -80,23 +75,21 @@ const MainUI = () => {
       <div className="main-ui">
         <h1>Find Items</h1>
         <div className="items">
-          {items.map(item => {
+          {items.map(items => {
             return (
-              <div key={item.id} className="item-card">
-                <h1>{item.name}</h1>
-                <h2>{item.price}</h2>
-                <p>{item.category}</p>
+              <div key={items.id} className="items-card">
+                <h1>Name: {items.name}</h1>
+                <h2>Price: {items.price}</h2>
+                <h3>Category: {items.category}</h3>
                 <div>
-                  <button value={item.id} onClick={(e) => handleDelete(e)}>X</button>
-                  <button value={item.id} onClick={(e) => ClickHandler(e)}>Save</button>
+                  <button value={items.id} onClick={(e) => handleDelete(e)}>X</button>
+                  <button value={items.id} onClick={(e) => ClickHandler(e)}>Save</button>
                 </div>
               </div>
             )
           })}
         </div>
       </div>
-
-
     </div>
   )
 }
