@@ -72,7 +72,7 @@ const FormikRegister = withFormik({
         console.log(res.data);
         resetForm();
         setStatus(res.data);
-        props.history.push('/Login');
+        props.history.push('/loginform');
         localStorage.setItem("userid", res.data.id);
       })
   }

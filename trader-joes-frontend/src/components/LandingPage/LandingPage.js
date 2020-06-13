@@ -8,7 +8,7 @@ const LandingPage = () => {
       <h2>Let's get a shopping list started!</h2>
       <div className="links">
         <Link to="/loginform">Log In</Link>
-        <Link to="/onboarding" >Register</Link>
+        <Link to="/register" >Register</Link>
       </div>
     </div>
   )

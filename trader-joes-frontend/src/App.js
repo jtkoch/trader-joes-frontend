@@ -1,22 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import Login from './components/LoginForm/LoginForm'
-import PrivateRoute from "./Utils/PrivateRoute.js"
+import LandingPage from './components/LandingPage/LandingPage'
+import FormikLoginForm  from './components/LoginForm/LoginForm'
+import FormikRegister from './components/Register/Register'
+import ProtectedRoute from './Utils/PrivateRoute'
+import MainUI from './components/MainUI/MainUI'
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          </ul>
-          <Route path="/login" component={Login} />
-        </div>
-      </Router>
+      <Route exact path="/" component={LandingPage} />
+      <Route exact path="/loginform" component={FormikLoginForm} />
+      <Route exact path="/register" component={FormikRegister} />
+
+      <ProtectedRoute exact path ="/mainui" component ={MainUI} />
     </div>
   );
 }

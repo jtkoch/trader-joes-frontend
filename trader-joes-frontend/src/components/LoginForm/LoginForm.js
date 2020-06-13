@@ -10,7 +10,7 @@ const LoginForm = ({ errors, touched, values, status }) => {
     password: "",
   });
 
-  console.log(user);
+  console.log(user)
 
   useEffect(() => {
     status && setUser(status);
@@ -62,7 +62,7 @@ const FormikLoginForm = withFormik({
         localStorage.setItem("token", res.data.token);
         resetForm();
         setStatus(res.data);
-        props.history.push(`/${values.type}mainui`);
+        props.history.push('/mainui');
       })
   }
 })(LoginForm);
