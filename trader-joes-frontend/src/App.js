@@ -1,24 +1,33 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import LandingPage from './components/LandingPage/LandingPage'
-import FormikLoginForm  from './components/LoginForm/LoginForm'
-import FormikRegister from './components/Register/Register'
-import PrivateRoute from './Utils/PrivateRoute'
-import MainUI from './components/MainUI/MainUI'
-import './App.scss';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import SavedList from './components/SavedList/SavedList'
+import ItemList from './components/ItemList/ItemList';
+import Item from './components/Item/Item'
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/loginform" component={FormikLoginForm} />
-        <Route exact path="/register" component={FormikRegister} />
+export default class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      savedList: []
+    }
+  }
 
-        <PrivateRoute exact path="/mainui" component={MainUI} />
-      </Router>
-    </div>
-  );
+  addToSavedList = (item) => {
+    console.log(this.state.savedList)
+    const savedList = this.state.savedList;
+    savedList.push(item);
+    this.setState({savedList});
+  }
+
+  render(){
+    return (
+      <div>
+        <SavedList list={this.state.savedList} />
+        <Route exact path="/" component={ItemList} />
+        <Route path="/items/:id" render={ (props) => {
+          return(<Item {...props} addToSavedList={this.addToSavedList}/>)
+        }} />
+      </div>
+    )
+  }
 }
-
-export default App;
