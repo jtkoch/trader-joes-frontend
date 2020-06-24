@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom'
 
-const ItemCard = (props) => {
-  const {name, price, category} = props.item;
+const ItemCard = props => {
+
+  const { name, price, category } = props.item
+
   return (
     <div className="item-card">
-      <h2>{name}</h2>
+    <Link to={`/items/${props.item.id}`}><h2>{name}</h2></Link>
       <div className="item-price">
         Price: <em>{price}</em>
       </div>
@@ -13,6 +16,6 @@ const ItemCard = (props) => {
       </div>
     </div>
   )
-}
+};
 
-export default ItemCard
+export default ItemCard;

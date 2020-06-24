@@ -1,42 +1,34 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import ItemCard from '../ItemCard/ItemCard'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import ItemCard from '../ItemCard/ItemCard';
 
-export default class ItemList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: []
-    };
-  }
-
-  componentDidMount() {
-    axios
-      .get('https://trader-joes-shopping-list.herokuapp.com/api/items')
-      .then(response => {
-        this.setState(() => ({ items: response.data }));
-      })
-      .catch(error => {
-        console.error('Server Error', error);
-      });
-  }
-
-  render() {
-    return (
-      <div className="item-list">
-        {this.state.items.map(item => (
-          <ItemDetails key={item.id} item={item} />
-        ))}
-      </div>
-    );
-  }
-}
-
-function ItemDetails({ item }) {
+const ItemList = props => {
+  const [items, setItems] = useState([])
+  useEffect(() => {
+    const getItems = () => {
+      axios
+        .get('https://trader-joes-shopping-list.herokuapp.com/api/items')
+        .then(response => {
+          setItems(response.data);
+        })
+        .catch(error => {
+          console.error('Server Error', error);
+        });
+    }
+    
+    getItems();
+  }, []);
+  
   return (
-    <Link to={`/items/${item.id}`}>
-      <ItemCard item={item} />
-    </Link>
+    <div className="item-list">
+      {items.map(item => (
+        <Link to={`/items/${item.id}`}>
+          <ItemCard key={item.id} item={item} />
+        </Link>
+      ))}
+    </div>
   );
 }
+
+export default ItemList

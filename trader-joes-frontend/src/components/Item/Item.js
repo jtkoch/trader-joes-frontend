@@ -1,52 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import ItemCard from '../ItemCard/ItemCard';
 
-export default class Item extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      item_id: "",
-      name: "", 
-      price: "", 
-      category: ""
-    };
-  }
+const Item = (props) => {
+  const [item, setItem] = useState();
+ 
+  useEffect(() => {
+    const id = props.match.params.id;
 
-  componentDidMount() {
-    this.fetchItem(this.props.match.params.id)
-  }
+       axios
+        .get(`https://trader-joes-shopping-list.herokuapp.com/api/items/${id}`)
+        .then(response => {
+          setItem(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
 
-  componentWillReceiveProps(newProps){
-    if(this.props.match.params.id !== newProps.match.params.id){
-      this.fetchItem(newProps.match.params.id);
-    }
-  }
+  },[props.match.params.id]);
 
-  fetchItem = (id) => {
-    axios
-      .get(`https://trader-joes-shopping-list.herokuapp.com/api/items/${id}`)
-      .then(response => {
-        this.setState(() => ({ item: response.data }))
-      })
-      .catch(error => {
-        console.error(error);
-      });
+  const saveItem = () => {
+    const addToSavedList = props.addToSavedList;
+    addToSavedList(item)
   }
 
-  saveItem = () => {
-    const addToSavedList = this.props.addToSavedList;
-    addToSavedList(this.state.item)
+  if (!item) {
+    return <div>Loading item information...</div>;
   }
-  
-  render() {
-    if(!this.state.item) {
-      return <div>Loading item information...</div>
-    }
-    
-    return (
-      <div className="save-wrapper">
-        <div className="save-button" onClick={this.saveItem}>Save</div>
-      </div>
-    );
-  }
+
+  return (
+    <div className="save-wrapper">
+      <ItemCard item={item} />
+      <div className="save-button" onClick= {saveItem}>Save</div>
+    </div>
+  );
 }
+
+export default Item;
