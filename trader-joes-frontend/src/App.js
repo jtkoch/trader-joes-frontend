@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Route } from 'react-router-dom'
 import SavedList from './components/SavedList/SavedList'
 import ItemList from './components/ItemList/ItemList'
 import Item from './components/Item/Item'
 
 const App = () => {
-  const [savedList, setSavedList] = useState( [] );
+  const [savedList, setSavedList] = useState( [] )
 
   const addToSavedList = item => {
-    setSavedList( [...savedList, item] );
+    setSavedList( [...savedList, item] )
   };
 
   return (
@@ -20,4 +20,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App
