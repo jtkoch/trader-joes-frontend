@@ -7,10 +7,8 @@ const Navigation = () => {
 
 	return (
 		<div className="navigation">
-			<NavLink to="/">Products</NavLink>
-			<NavLink to="/cart">
-				List <span>{cart.length}</span>
-			</NavLink>
+			<NavLink to="/">Items</NavLink>
+			<NavLink to="/cart"><i className="material-icons">shopping_cart</i><span>{cart.length}</span></NavLink>
 		</div>
 	);
 };
