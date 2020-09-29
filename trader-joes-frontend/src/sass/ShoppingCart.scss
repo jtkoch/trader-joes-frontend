@@ -58,18 +58,5 @@
 		align-items: center;
 		background: #141618;
 		color: white;
-
-		button {
-			border: 1px solid white;
-			background: transparent;
-			border-radius: 5px;
-			padding: 10px;
-			color: white;
-
-			&:hover {
-				background: black;
-				color: white;
-			}
-		}
 	}
 }
