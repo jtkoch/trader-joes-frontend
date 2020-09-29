@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../contexts/CartContext';
+import React, { useContext } from 'react'
+import { CartContext } from '../contexts/CartContext'
 
 const Item = props => {
     const { removeItem } = useContext(CartContext)
@@ -13,7 +13,7 @@ const Item = props => {
 				<button onClick = {() => removeItem(props.id)}>Remove from cart</button>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Item;
+export default Item

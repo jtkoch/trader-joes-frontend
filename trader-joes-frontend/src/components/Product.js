@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Product = props => {
 	return (
@@ -10,7 +10,7 @@ const Product = props => {
 				Add to list
 			</button>
 		</div>
-	);
-};
+	)
+}
 
-export default Product;
+export default Product
