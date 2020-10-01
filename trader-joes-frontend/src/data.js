@@ -36,12 +36,6 @@ export default [
     category: "Produce"
     },
     {
-    id: 7,
-    name: "Frozen Strawberries",
-    price: "1.99",
-    category: "Frozen"
-    },
-    {
     id: 8,
     name: "Whey Protein Vanilla",
     price: "11.99",
@@ -750,12 +744,6 @@ export default [
     category: "Produce"
     },
     {
-    id: 126,
-    name: "Kale 10oz",
-    price: "2.49",
-    category: "Produce"
-    },
-    {
     id: 127,
     name: "Vidalia Onions Bag 2lb",
     price: "2.29",
@@ -847,13 +835,13 @@ export default [
     },
     {
     id: 142,
-    name: "Organic Vegen Tempeh 3 Grain",
+    name: "Organic Vegan Tempeh 3 Grain",
     price: "1.99",
     category: "Deli"
     },
     {
     id: 143,
-    name: "Pata Raviolo Sweet Corn Basil",
+    name: "Pasta Raviolo Sweet Corn Basil",
     price: "3.69",
     category: "Deli"
     },
@@ -862,12 +850,6 @@ export default [
     name: "Raw Walnut Halves & Pieces",
     price: "4.99",
     category: "Snacks"
-    },
-    {
-    id: 145,
-    name: "Baby Beets Steamed 8 oz",
-    price: "2.29",
-    category: "Produce"
     },
     {
     id: 146,
