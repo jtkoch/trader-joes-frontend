@@ -3,6 +3,7 @@ import React from 'react'
 const Product = props => {
 	return (
 		<div className="product">
+			<img src={props.product.image} alt={`${props.product.name}`} />
 			<h1 className="name">{props.product.name}</h1>
 			<p className="price">${props.product.price}</p>
 			<p className="category">{props.product.category}</p>

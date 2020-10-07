@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route } from 'react-router-dom'
 import data from './data'
 import { ProductContext } from './contexts/ProductContext'
@@ -10,8 +10,13 @@ import Products from './components/Products'
 import ShoppingCart from './components/ShoppingCart'
 
 function App() {
+	const localCart = JSON.parse(localStorage.getItem('cart'))
 	const [products] = useState(data)
-	const [cart, setCart] = useState([])
+	const [cart, setCart] = useState(() => !localCart ? [] : localCart)
+
+	useEffect(() => {
+		localStorage.setItem('cart', JSON.stringify(cart))
+	}, [cart])
 
 	const addItem = item => {
     	setCart([...cart, item])
