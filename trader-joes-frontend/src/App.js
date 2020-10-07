@@ -10,8 +10,13 @@ import Products from './components/Products'
 import ShoppingCart from './components/ShoppingCart'
 
 function App() {
+	const localCart = JSON.parse(localStorage.getItem('cart'))
 	const [products] = useState(data)
-	const [cart, setCart] = useState([])
+	const [cart, setCart] = useState(() => !localCart ? [] : localCart)
+
+	useEffect(() => {
+		localStorage.setItem('cart', JSON.stringify(cart))
+	}, [cart])
 
 	const addItem = item => {
     	setCart([...cart, item])
