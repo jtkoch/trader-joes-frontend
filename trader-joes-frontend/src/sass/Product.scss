@@ -1,10 +1,14 @@
 .product {
 	border-radius: 5px;
-	background: white;
+	background: whitesmoke;
 	transition: 0.2s ease-in-out;
-	width: 200px;
-	margin: 25px;
+	width: 150px;
+	margin: 10px;
 	text-align: center;
+
+	@media only screen and (max-width: 600px)  {
+		width: 130px;
+	}
 
 	.details {
 		display: flex;
@@ -12,18 +16,23 @@
 
 	.name {
 		font-weight: bold;
-		margin: 20px;
+		margin: 10px;
+
 	}
 
 	.price {
-		padding: 5px 0;
+		padding: 0px;
 	}
 
 	img {
 		object-fit: contain;
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
-		max-width: 200px;
+		max-width: 150px;
+
+		@media only screen and (max-width: 600px)  {
+			width: 130px;
+		}
 	}
 
 	button {
@@ -32,7 +41,7 @@
 		padding: 10px;
 		background: transparent;
 		transition: 0.15s ease-in-out;
-		margin: 10px 0;
+		margin: 5px 0;
 		color: lightcoral;
 
 		&:hover {
