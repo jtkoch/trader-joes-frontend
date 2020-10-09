@@ -1,7 +1,7 @@
 .shopping-cart {
 	display: block;
 	margin: 0 auto;
-	width: 1000px;
+	width: 75%;
 	background: white;
 	border-radius: 5px;
 
@@ -50,13 +50,13 @@
 	}
 
 	&__checkout {
-		margin: 30px 0;
+		margin-top: 100vh;
 		border-top: 1px solid lightgray;
 		padding: 20px 30px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background: #141618;
+		background: black;
 		color: white;
 	}
 }

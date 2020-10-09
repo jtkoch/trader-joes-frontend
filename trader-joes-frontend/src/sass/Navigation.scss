@@ -3,8 +3,7 @@
 	justify-content: flex-end;
 	padding: 0 100px;
 	transition: 0.2s ease-in;
-	margin-bottom: 40px;
-	background: #141618;
+	background: transparent;
 	
 	a {
 		color: white;
@@ -17,12 +16,12 @@
 			top: -8px;
 			left: 0px;
 			font-weight: bold;
-			line-height: 18px;
+			line-height: 26px;
 			text-align: center;
 			background: lightcoral;
 			border-radius: 100%;
-			width: 18px;
-			height: 18px;
+			width: 25px;
+			height: 25px;
 		}
 	}
 }
