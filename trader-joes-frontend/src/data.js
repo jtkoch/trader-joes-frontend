@@ -1,3 +1,17 @@
+// Info for the background images: 
+// Size: 300px | 300px
+
+// Produce: ff8af6
+// Frozen: 1fb2ef
+// Dessert: 65fcbc
+// Snacks: fd8c22
+// Shelf: ffec48
+// Spices: b654fd
+// Deli: ba925a
+// Bakery: 49b300
+// Beverages: b71519
+// Cleaning: e0e2d7
+
 import apples1 from './images/apples1.png'
 import avocado1 from './images/avocado1.png'
 import babycarrots1 from './images/babycarrots1.png'
@@ -117,6 +131,18 @@ import cookie from './images/cookie.png'
 import chocolate from './images/chocolate.png'
 import peanutbuttercups from './images/peanutbuttercups.png'
 import icecream1 from './images/icecream1.png'
+import bruschetta from './images/bruschetta.png'
+import brownsugar from './images/brownsugar.png'
+import cumin from './images/cumin.png'
+import cinnamon from './images/cinnamon.png'
+import nutmeg from './images/nutmeg.png'
+import almonds from './images/almonds.png'
+import sunflowerseeds from './images/sunflowerseeds.png'
+import raisins from './images/raisins.png'
+import apricots from './images/apricots.png'
+import tuscanpane from './images/tuscanpane.png'
+import salsa from './images/salsa.png'
+import goatcheese from './images/goatcheese.png'
 
 
 
@@ -511,14 +537,14 @@ export default [
     name: "Organic Frozen Strawberries",
     price: "2.69",
     category: "Frozen",
-    image: strawberries1
+    image: strawberries2
     },
     {
     id: 64,
     name: "Frozen Peach Slices",
     price: "2.99",
     category: "Frozen",
-    image: peach1
+    image: peach2
     },
     {
     id: 65,
@@ -581,7 +607,7 @@ export default [
     name: "Fresh Strawberries 1lb",
     price: "3.49",
     category: "Produce",
-    image: strawberries2
+    image: strawberries1
     },
     {
     id: 76,
@@ -980,6 +1006,139 @@ export default [
     name: "Organic Yellow Peach",
     price: "0.89",
     category: "Produce",
-    image: peach2
-    }
+    image: peach1
+    },
+    {
+    id: 152,
+    name: "Bruschetta",
+    price: "2.69",
+    category: "Shelf",
+    image: bruschetta
+    },
+    {
+    id: 153,
+    name: "Organic Brown Sugar",
+    price: "3.49",
+    category: "Shelf",
+    image: brownsugar
+    },
+    {
+    id: 154,
+    name: "Organic Coconut Oil",
+    price: "4.99",
+    category: "Shelf",
+    image: coconutchips
+    },
+    {
+    id: 155,
+    name: "Ground Cumin",
+    price: "1.99",
+    category: "Spices",
+    image: cumin
+    },
+    {
+    id: 156,
+    name: "Ground Cinnamon",
+    price: "1.99",
+    category: "Spices",
+    image: cinnamon
+    },
+    {
+    id: 157,
+    name: "Garlic Powder",
+    price: "1.99",
+    category: "Spices",
+    image: garlic1
+    },   
+    {
+    id: 158,
+    name: "Veggie & Flaxseed Tortilla Chips",
+    price: "2.69",
+    category: "Snacks",
+    image: tortillachip
+    },
+    {
+    id: 159,
+    name: "Tuscan Pane Bread",
+    price: "2.79",
+    category: "Bakery",
+    image: tuscanpane
+    },
+    {
+    id: 160,
+    name: "Raw Almonds",
+    price: "4.99",
+    category: "Snacks",
+    image: almonds
+    },
+    {
+    id: 161,
+    name: "Raw Sunflower Seeds",
+    price: "2.29",
+    category: "Snacks",
+    image: sunflowerseeds
+    },
+    {
+    id: 162,
+    name: "Organic Dark Chocolate Almond Bar",
+    price: "1.99",
+    category: "Dessert",
+    image: chocolate
+    },
+    {
+    id: 163,
+    name: "Colombian Dark Chocolate With Plantain Nibs",
+    price: "1.79",
+    category: "Dessert",
+    image: chocolate
+    },
+    {
+    id: 164,
+    name: "Ground Nutmeg",
+    price: "2.99",
+    category: "Spices",
+    image: nutmeg
+    },
+    {
+    id: 165,
+    name: "Jumbo Raisin Medley",
+    price: "3.69",
+    category: "Snacks",
+    image: raisins
+    },
+    {
+    id: 166,
+    name: "Dried Apricots",
+    price: "3.99",
+    category: "Snacks",
+    image: apricots
+    },
+    {
+    id: 167,
+    name: "Organic Unsweetened Coconut Flakes",
+    price: "1.99",
+    category: "Snacks",
+    image: coconutchips
+    },
+    {
+    id: 168,
+    name: "Steamed Lentils",
+    price: "3.29",
+    category: "Produce",
+    image: lentils
+    },
+    {
+    id: 169,
+    name: "Hot Pico De Gallo Salsa",
+    price: "2.99",
+    category: "Deli",
+    image: salsa
+    },
+    {
+    id: 170,
+    name: "Herb Goat Cheese",
+    price: "2.99",
+    category: "Deli",
+    image: goatcheese
+    },
 ]
